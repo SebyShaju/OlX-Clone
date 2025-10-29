@@ -1,0 +1,33 @@
+.nav-link button{
+
+    background-color: white;
+    height: 45px;
+    width: 100px;
+    border-width: 5px;
+    border-top-color: rgb(72, 234, 234);
+    border-left-color: blue;
+    border-right-color: rgb(243, 243, 47);
+    border-bottom-color:rebeccapurple;
+    
+    font-size: large;
+    border-radius: 30px;
+    outline: none;
+    box-shadow: none !important;
+    
+    
+
+
+}
+.searchbutton button{
+
+    background-color: #002f34; 
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.searchbutton button:hover {
+    background-color: #004f53; 
+}

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+<link rel="stylesheet" href="/static/css/postdetails.css">
+
+
+<div class="content container">
+        <div class="postdetail row">
+            <!-- Left Section (Carousel + Description) -->
+            <div class="left-section col-lg-8">
+                <!-- Image Carousel -->
+                <div id="carouselExample" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/olx/{{ads_details.carousel1}}" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/olx/{{ads_details.carousel2}}" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/olx/{{ads_details.carousel3}}" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+    
+                
+                <div class="description-box">
+                    <h3>{{ ads_details.title }}</h3>
+                    <p>{{ ads_details.description }}</p>
+                    <p><b>Category:</b> {{ ads_details.category }}</p>
+                    
+                </div>
+            </div>
+    
+            
+            <div class="right-section col-lg-4">
+                <div class="infobox">
+                    <h4>₹ {{ ads_details.price }}</h4>
+                    <h3>{{ ads_details.title }}</h3>
+                    <p>Location: {{ ads_details.location }}</p>
+                    <p><b>Posted On:</b> {{ ads_details.created_at }}</p>
+                    
+                </div>
+
+                <div class="user">
+                        <h4> {{ ads_details.user }}</h4>
+                        
+                        
+                        <a href="{% url 'addinterest' postid=ads_details.id %}"><button class="interested-btn">I'm Interested</button></a>
+                    </div>
+
+                    <div class="location">
+                        <h4>Posted In</h4>
+                        
+                        <p>Location: {{ ads_details.location }}</p>
+                        
+                    </div>    
+            </div>
+        </div>
+    </div>
+    
+
+                
+    
+       
+    
+
+{%endblock%}

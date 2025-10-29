@@ -1,0 +1,22 @@
+<a href="{% url 'addcategory' %}"><button>Add Categories</button></a>
+<br>
+<br>
+<table>
+    <tr>
+        <td>Categories</td>
+        <td>View</td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+    {%for i in category_list%}
+    <tr>
+        <td>{{i.name}}</td>
+        <td><a href="{% url 'postpage' i.name %}">View</a></td>
+        <td><a href="{% url 'edit_category' i.name %}">Edit</a></td>
+        <td><a href="{% url 'delete_category' i.name %}">Delete</a></td>
+        
+        
+    </tr>
+
+    {%endfor%}
+</table>

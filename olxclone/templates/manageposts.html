@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{%block content%}
+
+
+<link rel="stylesheet" href="/static/css/manageposts.css">
+
+<div class="manage container">
+
+
+    
+    <br>
+    <br>
+    <table>
+        <tr>
+            <td><b>Ads</b></td>
+            <td><b>View</b></td>
+            <td><b>Edit</b></td>
+            <td><b>Delete</b></td>
+        </tr>
+        {%for i in ads_list%}
+        <tr>
+            <td>{{i.title}}</td>
+            <td><a href="{% url 'post_details' i.id %}">View</a></td>
+            <td><a href="{% url 'edit_post' i.id %}">Edit</a></td>
+            <td><a href="{% url 'delete_post' i.id %}">Delete</a></td>
+            
+            
+        </tr>
+    
+        {%endfor%}
+    </table>
+
+    <a href="{% url 'addpost' %}"><button  style="margin-top: 50px;">Add Ads</button></a>
+    
+
+</div>
+
+{%endblock%}

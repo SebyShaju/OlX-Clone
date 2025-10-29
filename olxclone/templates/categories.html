@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{%block filter%}
+
+        {%for i in categories%}
+         
+        <img  src="{{i.img}}" >
+        <p class="heading">{{i.name}}</p>
+        <p class="desc">{{i.description}}</p>
+        <a href="{% url 'postpage' i.name %}"><button>More</button></a>
+        {%endfor%}
+  
+
+
+
+    
+        
+       
+       
+        
+        
+    
+   
+
+
+{%endblock%}

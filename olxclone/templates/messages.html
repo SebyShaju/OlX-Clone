@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Messages</h2>
+
+{% if mssgs %}
+    <ul>
+        {% for mssg in mssgs %}
+            <li>
+                <strong>From:</strong> {{ mssg.sender.username }} <br>
+                <strong>Ad:</strong> <a href="{% url 'post_details' mssg.ad.id %}">{{ mssg.ad.title }}</a> <br>
+                <strong>Message:</strong> {{ mssg.message }} <br>
+                <hr>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No messages yet.</p>
+{% endif %}
+
+{% endblock %}

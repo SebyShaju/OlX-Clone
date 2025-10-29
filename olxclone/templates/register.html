@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+
+<link rel="stylesheet" href="/static/css/register.css">
+
+<form method="post" class="reg-form">
+    {%csrf_token%}
+    <div class="form-group">
+        {{ form.as_p }} 
+    </div>
+    <button type="submit" class="submit-btn">Submit</button>
+</form>
+
+{%endblock%}

@@ -1,0 +1,27 @@
+table,tr,td{
+    border: 1px;
+    border-style: solid;
+    border-collapse:collapse;
+    padding: 15px;
+}
+
+table{
+    width: 100%;
+}
+
+td{
+    width: 25%;
+}
+
+.manage button{
+
+    background-color: rgb(0, 47, 52);
+    color: white;
+    width: 40%;
+    font-weight: bold;
+    height: 50px;
+    
+}
+.manage{
+    text-align: center;
+}

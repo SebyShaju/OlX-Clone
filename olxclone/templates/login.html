@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{%block content%}
+
+
+<link rel="stylesheet" href="/static/css/login.css">
+
+<div class="main container">
+
+    <form method="post" class="login-form">
+        {%csrf_token%}
+        <input class="cred" type="text" placeholder="Username" name="user">
+        <input class="cred" type="password" placeholder="Password" name="pass">
+        <input class="bttn" type="submit">
+    </form>
+
+</div>
+
+{%endblock%}

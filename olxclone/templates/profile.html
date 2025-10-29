@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+
+{%block content%}
+<link rel="stylesheet" href="/static/css/profile.css">
+<div class="content container">
+  
+  <div class="profile_content row">
+
+    <div class="profile_details  col-lg-5 col-md-12" style="margin-top: 50px;margin-bottom: 50px;">
+      <div class="pro">
+
+        <div class="imagez">
+          <img class="propic" src="/olx/{{pro.profile_picture}}" >
+
+        </div>
+       <div class="textx">
+        <p style="font-size: larger;font-weight: bold;">{{pro.user}}</p>
+        <p style="width: 90%;"><b>Description</b> - {{pro.bio}}</p>
+        <p><b>Address</b>  - {{pro.address}}</p>
+        <p><b>Contact</b>  - {{pro.phone}}</p>
+        <p><b>Mail id</b>  - {{pro.mail}}</p>
+    
+
+
+       </div> 
+      
+   
+  <a href="{% url 'editprofile' pro.id %}">
+      <button>Edit Profile</button>
+  </a>
+  
+
+
+      </div>
+        
+    
+    </div>
+
+    <div class="myads col-lg-7 col-md-12">
+
+        <h1 style="text-align: center;margin-top: 20px;margin-bottom: 15px;">My Ads</h1>
+
+        <div class="products container">
+
+            {%for i in ads%}
+            <a href="{% url 'post_details' i.id %}" style="text-decoration: none;">
+
+                    <div class="cards">
+                      <div class="images">
+                        <img class="productimgs" src="/olx/{{i.img}}" >
+        
+                      </div>
+        
+                      <div class="details">
+                        <p style="font-weight: bolder;font-size: x-large;">${{i.price}}</p>
+                        <p style="color: gray;">{{i.title}}</p>
+                        
+                        <div class="bottomdiv">
+                          <div class="bottomdiv1">
+                            <p style="color: gray; font-size: small;">{{i.location}}</p>
+                            
+                          </div>
+                          <div class="bottomdiv2">
+                            
+                            <p style="color: gray;font-size: small;">{{i.created_at}}</p>
+                          </div>
+        
+                        </div>
+
+          
+                      </div>
+                    
+                     
+                    </div>
+
+                  </a>
+                      
+
+                  {%endfor%}
+
+
+    </div>
+    <div class="bttn">
+      <a href="{% url 'managepost' %}">
+        <button>Edit Ads</button>
+    </a>
+    </div>
+    
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+{%endblock%}

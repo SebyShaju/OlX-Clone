@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{%block content%}
+
+<link rel="stylesheet" href="/static/css/addposts.css">
+<form method="post" enctype="multipart/form-data" class="olx-form">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form.as_p }} 
+    </div>
+    <button type="submit" class="submit-btn">Post Ad</button>
+</form>
+
+{%endblock%}
